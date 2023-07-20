@@ -1,84 +1,133 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Transfero</title>
+        <title>Audi - Interlagos</title>
         <link rel="stylesheet" href="/public/style.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>    
 
 <body>
-    <div class="content">
-        <div class="home-button">
-            <a href="/" class="image-button">
-                <img src="/public/home.svg" alt="">
-            </a>
-        </div>        
+    <div class="content">  
         <div class="logo-menu">
-            <img src="/public/logo-form-<%= form.name %>.svg" alt="">
+            <img src="/public/logo-menu.png" alt="">
         </div> 
    
 
-        <form id="transferoForm" action="/submit-form" method="POST">        
-            <% if (form.name == 'PRIME') { %>
-                <select id="advisor" name="advisor" form="transferoForm">
-                    <option value="Gabriel Lacerda">Gabriel Lacerda</option>
-                    <option value="Lucas Panisset">Lucas Panisset</option>
-                    <option value="Tatiana Ache">Tatiana Ache</option>
-                    <option value="Victoria Schulz">Victoria Schulz</option>
-                </select>
-                <br>
-            <% } %>
-            <% if (form.name != 'PRIME' && form.name != 'APP') { %>                    
-                <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" ><br>
-            <% } %>
-                <input type="text" id="name" name="name" placeholder="Nome" required ><br>
-                <input type="email" id="email" name="email" placeholder="E-mail"><br>
-                <input type="phone" id="phone" name="phone" placeholder="Telefone" ><br>
-            <% if (form.name != 'PRIME' && form.name != 'APP') { %>
-                <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?"  ><br>
-            <% } %>
-            
-            <% if (form.name == 'PAYMENTS') { %>
-                <div class="checkboxes-section">
-                    <p>Qual é o produto de interesse?</p>
-                    <div class="checkboxes-container">
-                        <label for="onRamp" class="checkbox">On Ramp
-                            <input type="checkbox" id="onRamp" name="product" value="On Ramp">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="offRamp" class="checkbox">Off Ramp
-                            <input type="checkbox" id="offRamp" name="product" value="Off Ramp">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="internationalSettlements" class="checkbox">International Settlements
-                            <input type="checkbox" id="internationalSettlements" name="product" value="International Settlements">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            <% } %>
-            <% if (form.name == 'PRIME') { %>
-                <div class="checkboxes-section">
-                    <p>Já investe em cripto?</p>
-                    <div class="checkboxes-container">
-                        <label for="yes" class="checkbox">Sim
-                            <input type="radio" id="yes" name="cripto" value="Sim">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="no" class="checkbox">Não
-                            <input type="radio" id="no" name="cripto" value="Não">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>           
-            <% } %>      
-                <textarea id="message" name="message" placeholder="Observações gerais" ></textarea><br>
-                <input type="submit" value="Enviar"><br>        
-            <div style="display: none;">
-                <input type="text" id="formType" name="formType" value=<%= form.name %>>
-            <div>
-            
+        <form id="form" action="/submit-form" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nome*" required ><br>
+            <input type="phone" id="phone" name="phone" placeholder="Telefone*" required><br>
+            <input type="email" id="email" name="email" placeholder="E-mail*" required><br>
+            <select id="state" name="state" form="form">
+                <option>Estado*</option>
+                <option value="1">Acre / AC</option>
+                <option value="2">Alagoas / AL</option>
+                <option value="4">Amapa / AP</option>
+                <option value="3">Amazonas / AM</option>
+                <option value="5">Bahia / BA</option>
+                <option value="6">Ceará / CE</option>
+                <option value="7">Distrito Federal / DF</option>
+                <option value="8">Espírito Santo / ES</option>
+                <option value="9">Goiás / GO</option>
+                <option value="10">Maranhão / MA</option>
+                <option value="13">Mato Grosso / MT</option>
+                <option value="12">Mato Grosso do Sul / MS</option>
+                <option value="11">Minas Gerais / MG</option>
+                <option value="14">Pará / PA</option>
+                <option value="15">Paraíba / PB</option>
+                <option value="18">Paraná / PR</option>
+                <option value="16">Pernambuco / PE</option>
+                <option value="17">Piaui / PI</option>
+                <option value="19">Rio de Janeiro / RJ</option>
+                <option value="20">Rio Grande do Norte / RN</option>
+                <option value="23">Rio Grande do Sul / RS</option>
+                <option value="21">Rondônia / RO</option>
+                <option value="22">Roraima / RR</option>
+                <option value="24">Santa Catarina / SC</option>
+                <option value="26">São Paulo / SP</option>
+                <option value="25">Sergipe / SE</option>
+                <option value="27">Tocantins / TO</option>
+            </select><br>
+            <input type="text" id="city" name="city" placeholder="Cidade*" required ><br>
+            <input type="text" id="document" name="document" placeholder="CPF/CNPJ" required><br>
+            <select id="seller" name="seller" form="form">
+                <option>Concessionária de Preferência*</option>
+                <option value="0618" data-id="25">AL - Audi Center Maceió</option>
+                <option value="0624" data-id="26">AM - Audi Center Manaus</option>
+                <option value="4531" data-id="36">BA - Audi Center Salvador</option>
+                <option value="0690" data-id="17">CE - Audi Center Fortaleza</option>
+                <option value="4571" data-id="8">DF - Audi Center Brasília</option>
+                <option value="0685" data-id="45">ES - Audi Center Vitória</option>
+                <option value="695" data-id="18">GO - Audi Center Goiânia</option>
+                <option value="693" data-id="38">MA - Audi Center São Luis</option>
+                <option value="4528" data-id="5">MG - Audi Center Belo Horizonte</option>
+                <option value="4578" data-id="22">MG - Audi Center Juiz de Fora</option>
+                <option value="0686" data-id="43">MG - Audi Center Uberlândia</option>
+                <option value="0662" data-id="10">MS - Audi Center Campo Grande</option>
+                <option value="0683" data-id="14">MT - Audi Center Cuiabá</option>
+                <option value="4601" data-id="4">PA - Audi Center Belém</option>
+                <option value="4580" data-id="20">PB - Audi Center João Pessoa</option>
+                <option value="4566" data-id="32">PE - Audi Center Recife</option>
+                <option value="0616" data-id="42">PI - Audi Center Teresina</option>
+                <option value="0682" data-id="99999">PR - Audi Center Curitiba Alto da XV</option>
+                <option value="4545" data-id="15">PR - Audi Center Curitiba Mário Tourinho</option>
+                <option value="0675" data-id="24">PR - Audi Center Londrina</option>
+                <option value="0689" data-id="27">PR - Audi Center Maringá</option>
+                <option value="0670" data-id="34">RJ - Audi Center Barra</option>
+                <option value="4585" data-id="7">RJ - Audi Center Botafogo</option>
+                <option value="4504" data-id="29">RN - Audi Center Natal</option>
+                <option value="0656" data-id="12">RS - Audi Center Caxias do Sul</option>
+                <option value="0658" data-id="31">RS - Audi Center Porto Alegre</option>
+                <option value="0684" data-id="888">SC - Audi Center Balneário</option>
+                <option value="4512" data-id="6">SC - Audi Center Blumenau</option>
+                <option value="4565" data-id="16">SC - Audi Center Florianópolis</option>
+                <option value="4574" data-id="21">SC - Audi Center Joinville</option>
+                <option value="4587" data-id="2">SE - Audi Center Aracaju</option>
+                <option value="0677" data-id="1">SP - Audi Center ABC</option>
+                <option value="0652" data-id="51">SP - Audi Center Alphaville</option>
+                <option value="0632" data-id="9">SP - Audi Center Campinas</option>
+                <option value="0681" data-id="44">SP - Audi Center Itaim</option>
+                <option value="4550" data-id="19">SP - Audi Center Jardins</option>
+                <option value="4602" data-id="23">SP - Audi Center Lapa</option>
+                <option value="4518" data-id="8888">SP - Audi Center Morumbi</option>
+                <option value="45144" data-id="30">SP - Audi Center Pinheiros</option>
+                <option value="0665" data-id="33">SP - Audi Center Ribeirão Preto</option>
+                <option value="0637" data-id="35">SP - Audi Center Rio Preto</option>
+                <option value="0633" data-id="48">SP - Audi Center S.J dos Campos</option>
+                <option value="4582" data-id="37">SP - Audi Center Santos</option>
+                <option value="4589" data-id="39">SP - Audi Center Sorocaba</option>
+                <option value="0627" data-id="41">SP - Audi Center Tatuapé</option>
+                </select><br>
+
+                <select id="vehiclemodel" name="vehiclemodel" form="form">
+                    <option>Modelo*</option>
+                    <option value="8VML">A3 Sedan</option>
+                    <option value="8VFA">A3 Sportback</option>
+                    <option value="8W2A">A4 Sedan</option>
+                    <option value="A5555">A5</option>
+                    <option value="A6666">A6</option>
+                    <option value="A7777">A7</option>
+                    <option value="ET111">e-tron</option>
+                    <option value="ETSB2">e-tron sportback</option>
+                    <option value="ETSSB">e-tron s sportback</option>
+                    <option value="F83RJ7">e-tron GT quattro</option>
+                    <option value="RSETG">RS e-tron GT</option>
+                    <option value="Q3333">Q3</option>
+                    <option value="F3NCEA">Q3SB</option>
+                    <option value="Q5555">Q5</option>
+                    <option value="Q5SB">Q5 Sportback</option>
+                    <option value="FYGC2Y">Q5 TFSI e</option>
+                    <option value="FYTC2Y">Q5 Sportback TFSI e</option>
+                    <option value="Q7777">Q7</option>
+                    <option value="Q8888">Q8</option>
+                    <option value="RS444">RS 4</option>
+                    <option value="F5FRXA">RS 5</option>
+                    <option value="F5FRXA">RS 5 Sportback</option>
+                    <option value="4F5RUL">RS 6 Avant</option>
+                    <option value="4MNRV2">RS Q8</option>
+                </select><br>
+            <input type="submit" value="Enviar"><br> 
         </form>
     </div>
 </body>
 </html>
+
