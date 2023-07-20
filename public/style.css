@@ -1,0 +1,357 @@
+.image-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+html,body{
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    background-color: #160F29;
+    /* border-top: 5px solid #3938F1;
+    border-bottom: 5px solid #3938F1; */
+    box-sizing: border-box;
+}
+
+.content {
+    box-sizing: border-box;
+    background-color: #160F29;
+    border-top: 5px solid #3938F1;
+    border-bottom: 5px solid #3938F1;
+    text-align: center;
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-auto-rows: minmax(auto, auto);
+    justify-content: center;
+}
+
+.logo-menu
+{
+    height: 110px;
+    margin-top: 71px;
+}
+
+.line-menu
+{
+    height: 12px;
+    margin-top:20px;
+}
+
+.menu-title
+{
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+}
+
+p
+{
+    margin-bottom: 0;
+    margin-top: 40px;
+}
+
+.menu-button
+{
+    background-color: #3938F1; 
+    height: 60px;
+    width: 288px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-family: "Montserrat";
+}
+
+.button {
+       
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+    margin: 4px 2px;
+    cursor: pointer;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 165%;
+}
+
+input[type=text],input[type=email],input[type=phone], select {
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 9px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+}
+
+input::placeholder {
+    color: #FFFFFF;
+}
+
+.checkboxes-section{
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165%;
+    color: #FFFFFF;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 9px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+}
+
+textarea::placeholder {
+    color: #FFFFFF;
+}
+
+button [type="submit"]
+{
+    color: red;
+}
+
+input[type=submit] {
+    width: 300px;
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 165%;
+    color: #FFFFFF;
+    padding: 5px;
+    background-color: #160F29;
+    margin-bottom: 24px;
+    background: #3938F1;
+    cursor: pointer;
+}
+
+.thanks-square
+{
+    box-sizing: border-box;   
+    width: 288px;
+    height: 205px;
+    border: 1px solid #3938F1;
+    border-radius: 6px;
+}
+
+.thanks-h1
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.thanks-h2
+{  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFE;
+}
+
+.home-link
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 165%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;    
+}
+
+footer
+{
+    height: 52px;
+    left: 0px;
+    background: #3938F1;
+}
+
+.logo-websummit
+{
+    height: 16.82px;
+    padding: 17px;   
+}
+
+@media screen and (max-width: 1280px){
+    .content {
+        padding: 15% 10%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+    }
+    .logo-menu{
+        height: auto;
+    }
+    .logo-menu img{
+        width: 55%;
+    }
+    .logo-menu.main img{
+        width: 80%;
+    }
+    .line-menu{
+        height: auto;
+        margin: 80px 0;
+    }
+    .line-menu img{
+        width: 40%;
+        height: auto;
+        align-self: center;
+    }
+    .menu-title{
+        font-size: 2.2rem;
+        margin: 40px 0;
+    }
+    .menu-button{
+        width: 100%;
+        height: auto;
+        padding: 25px 0;
+        border-radius: 15px;
+        margin: 0;
+    }
+    .button {
+        font-size: 3.5rem;
+    }
+    .home-button {
+        position: absolute;
+        top: 10vw;
+        right: 10vw;
+        height: 20%;
+    }
+    .home-button img {
+        height: 20%;
+    }
+    input[type=text],input[type=email],input[type=phone], select, textarea{
+        width: 100%;
+        font-size: 2.2rem;
+        height: auto;
+        padding: 2% 5%;
+        margin: 5% 0;
+        border-radius: 12px;
+    }
+    .checkboxes-section{
+        font-size: 2.2rem;
+        padding: 3% 5%;
+    }
+    .checkboxes-section p{
+        text-align: left;
+        margin: 0%;
+        padding-bottom: 3%;
+    }
+    .checkboxes-container{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .checkbox{
+        position: relative;
+        padding: 0 80px 3%; 
+    }
+    .checkbox input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .checkmark {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #3D3DFF;
+        transform: rotate(-45deg);;
+    }
+    .checkbox input:checked ~ .checkmark {
+        background-color: #3D3DFF;
+      }
+    input[type=submit]{
+        float: right;
+        font-size: 2.5rem;
+        height: auto;
+        border-radius: 12px;
+        padding: 24px 60px;
+        width: 50%;
+    }
+    .thanks{
+        height: 45vh;
+    }
+    .thanks-square{
+        width: 80vw;
+        height: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        border-radius: 18px;
+        margin-bottom: 8%;
+    }
+    .thanks-h1{
+        font-size: 7rem;
+    }
+    .thanks-h2{
+        font-size: 2.5rem;
+    }
+    .home-link{
+        margin-top: 5%;
+        font-size: 2rem;
+    }
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5%;
+    }
+    .logo-websummit{
+        height: 40%;
+    }
+    
+}

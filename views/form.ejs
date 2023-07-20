@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transfero</title>
+        <link rel="stylesheet" href="/public/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>    
+
+<body>
+    <div class="content">
+        <div class="home-button">
+            <a href="/" class="image-button">
+                <img src="/public/home.svg" alt="">
+            </a>
+        </div>        
+        <div class="logo-menu">
+            <img src="/public/logo-form-<%= form.name %>.svg" alt="">
+        </div> 
+   
+
+        <form id="transferoForm" action="/submit-form" method="POST">        
+            <% if (form.name == 'PRIME') { %>
+                <select id="advisor" name="advisor" form="transferoForm">
+                    <option value="Gabriel Lacerda">Gabriel Lacerda</option>
+                    <option value="Lucas Panisset">Lucas Panisset</option>
+                    <option value="Tatiana Ache">Tatiana Ache</option>
+                    <option value="Victoria Schulz">Victoria Schulz</option>
+                </select>
+                <br>
+            <% } %>
+            <% if (form.name != 'PRIME' && form.name != 'APP') { %>                    
+                <input type="text" id="ownerName" name="ownerName" placeholder="Seu nome (colaborador Transfero)" ><br>
+            <% } %>
+                <input type="text" id="name" name="name" placeholder="Nome" required ><br>
+                <input type="email" id="email" name="email" placeholder="E-mail"><br>
+                <input type="phone" id="phone" name="phone" placeholder="Telefone" ><br>
+            <% if (form.name != 'PRIME' && form.name != 'APP') { %>
+                <input type="text" id="company" name="company" placeholder="Qual sua empresa e segmento?"  ><br>
+            <% } %>
+            
+            <% if (form.name == 'PAYMENTS') { %>
+                <div class="checkboxes-section">
+                    <p>Qual é o produto de interesse?</p>
+                    <div class="checkboxes-container">
+                        <label for="onRamp" class="checkbox">On Ramp
+                            <input type="checkbox" id="onRamp" name="product" value="On Ramp">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="offRamp" class="checkbox">Off Ramp
+                            <input type="checkbox" id="offRamp" name="product" value="Off Ramp">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="internationalSettlements" class="checkbox">International Settlements
+                            <input type="checkbox" id="internationalSettlements" name="product" value="International Settlements">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            <% } %>
+            <% if (form.name == 'PRIME') { %>
+                <div class="checkboxes-section">
+                    <p>Já investe em cripto?</p>
+                    <div class="checkboxes-container">
+                        <label for="yes" class="checkbox">Sim
+                            <input type="radio" id="yes" name="cripto" value="Sim">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="no" class="checkbox">Não
+                            <input type="radio" id="no" name="cripto" value="Não">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>           
+            <% } %>      
+                <textarea id="message" name="message" placeholder="Observações gerais" ></textarea><br>
+                <input type="submit" value="Enviar"><br>        
+            <div style="display: none;">
+                <input type="text" id="formType" name="formType" value=<%= form.name %>>
+            <div>
+            
+        </form>
+    </div>
+</body>
+</html>
